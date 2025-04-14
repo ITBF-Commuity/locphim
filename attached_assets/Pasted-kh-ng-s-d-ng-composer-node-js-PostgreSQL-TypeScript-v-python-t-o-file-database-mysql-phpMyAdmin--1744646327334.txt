@@ -1,0 +1,53 @@
+không sử dụng composer, node.js,PostgreSQL,TypeScript và python
+tạo file database mysql phpMyAdmin có tên loc_phim.sql
+1. Giao Diện Người Dùng (UI)
+Thiết kế Giao Diện giống như hình
+HTML/CSS: Sử dụng HTML để cấu trúc nội dung và CSS để tạo kiểu dáng.
+Màu sắc: Chọn bảng màu tươi sáng, có thể sử dụng các màu như xanh dương, vàng, và trắng để tạo cảm giác thân thiện.
+Hình ảnh: Sử dụng hình ảnh anime chất lượng cao để thu hút người dùng.
+2. Chức Năng Chính
+Xem Anime
+Tạo một trang để hiển thị danh sách các tập anime với số lượt xem.
+Sử dụng JavaScript để tải dữ liệu từ server và hiển thị.
+Đăng Nhập/Đăng Ký, quên mật khẩu, có thể đăng nhập bằng email hoặc số điện thoại
+Tạo các form cho người dùng đăng nhập và đăng ký.
+Sử dụng PHP hoặc js để xử lý thông tin người dùng.
+Bảng Xếp Hạng 1 đến 10
+Tạo một bảng xếp hạng hiển thị các anime được xem nhiều nhất.
+3. Nội Dung
+Cung cấp nội dung phong phú với nhiều thể loại anime khác nhau.
+Cập nhật thường xuyên các tập mới và anime hot bằng cách sử dụng cron job hoặc các script và tự động lưu trữ database.
+4. Tối Ưu Hóa SEO
+Sử dụng từ khóa liên quan đến anime trong tiêu đề, mô tả và thẻ H1, H2.
+Tối ưu hóa tốc độ tải trang bằng cách nén hình ảnh và sử dụng CDN.
+5. Công Nghệ Sử Dụng
+HTML/CSS: Để xây dựng giao diện.
+JavaScript: Để thêm các tính năng tương tác.
+Backend: Sử dụng PHP , js để xử lý dữ liệu người dùng và quản lý nội dung 
+mở rộng thêm các tính năng như:
+- Chế độ Dark Mode.
+- Tính năng "danh sách yêu thích" cho từng phim.
+- Tích hợp API bên ngoài để cập nhật thông tin phim.
+- Quản lý phiên đăng nhập bằng token hay session và tăng cường bảo mật.
+- có trang admin đầy đủ các chức năng để có thể điều chỉnh toàn bộ webstie
+- phần quyền admin khi đăng nhập để có thể truy cập trực tiếp, có chức năng bảo trì hiện đại, giao diện hiện đại đồng nhất.
+- thêm chức năng vip , tính năng nạp tiền qua các cổng vnpay, momo và quản lý tính năng dành cho admin.
+- thêm player riêng biệt khi xem anime hoặc phim, tự động xử lý độ phân giải video 360p,480p,720p, 1080p, 4k,..., có tính năng theo dõi thời lượng xem và lưu lại thời gian đang xem hoặc đã xem, phân biệt anime hoặc phim để vip có thể xem, thành viên thường chỉ có thể xem phim ở độ phân 480p và có quảng cáo, vip thì xem phim ở độ phân giải cao nhất và không có quảng cáo, thêm tính năng quản lý và chèn quảng cáo khi xem phim. tích hợp tính năng chọn thời gian chèn quảng cáo, tính năng nổi bật đầu video, giữa video hoặc cuối video. 
+ngôn ngữ sử dụng php, js, css chạy phần mềm laragon và url sẽ có dạng https://localhost/ tên website là Lọc Phim 
+Lưu ý: tôi cần 1 website không có dữ liệu ngoài dữ liệu tồn tại trong database
+- tạo file install.php có lựa chọn PostgreSQL database và MySQL (phpMyAdmin),... và tự động nhập dữ liệu loc_phim.sql vào database để có thể thiết lập cho máy chủ khác
+- thiết lập file config.php phù hợp với dữ liệu database để khi cài đặt thành công có thẻ dùng bình thường và không gặp lỗi 
+- Build the initial prototype
+- Implement VIP membership system with payment integration (VNPAY, MoMo)
+- Add custom video player with resolution options (360p to 4K)
+- Create comprehensive admin dashboard with content management
+- Add installation script for easy deployment to different hosting environments
+- Chuyển từ in-memory storage sang MySQL database thực tế
+- Tích hợp hệ thống thanh toán thật với VNPAY và MoMo
+- Cải tiến video player với nhiều độ phân giải và tracking thời gian xem
+- Phát triển trang quản trị admin đầy đủ chức năng
+- Tích hợp API bên ngoài để cập nhật thông tin phim và anime tự động
+- Hệ thống thông báo cho người dùng khi có phim mới
+- Tính năng bình luận và đánh giá phim
+- Tùy chọn phụ đề và ngôn ngữ cho video
+hãy sử dụng tiếng việt để trả lời tôi.
