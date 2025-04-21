@@ -1,0 +1,488 @@
+/**
+ * Lọc Phim - Christmas Theme
+ * Giao diện theo mùa Giáng sinh - Phiên bản nâng cấp
+ */
+
+:root {
+  --christmas-red: #d42426;
+  --christmas-dark-red: #a71d20;
+  --christmas-green: #0a5f38;
+  --christmas-dark-green: #073f25;
+  --christmas-gold: #ffbd4a;
+  --christmas-white: #f8f9fa;
+  --christmas-accent: #d4af37;
+  --christmas-shadow: rgba(0, 0, 0, 0.3);
+  --christmas-light-1: #ff6b6b;
+  --christmas-light-2: #4ecdc4;
+  --christmas-light-3: #ffd166;
+  --christmas-light-4: #06d6a0;
+  --christmas-light-5: #118ab2;
+}
+
+/**
+ * Áp dụng màu chủ đề vào biến chung của website
+ */
+[data-theme="light"], [data-theme="dark"] {
+  --primary-color: var(--christmas-red);
+  --secondary-color: var(--christmas-green);
+  --accent-color: var(--christmas-gold);
+}
+
+/* Đặt phông nền chung cho toàn trang */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 25%, transparent 25%, transparent 100%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 25%, transparent 25%, transparent 100%);
+  background-size: 60px 60px, 60px 60px;
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Header styles */
+.site-header {
+  background: linear-gradient(to bottom, var(--christmas-dark-green), var(--christmas-green));
+  border-bottom: 3px solid var(--christmas-gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-image: linear-gradient(90deg, 
+    var(--christmas-light-1) 0%, var(--christmas-light-1) 20%, 
+    var(--christmas-light-2) 20%, var(--christmas-light-2) 40%, 
+    var(--christmas-light-3) 40%, var(--christmas-light-3) 60%, 
+    var(--christmas-light-4) 60%, var(--christmas-light-4) 80%, 
+    var(--christmas-light-5) 80%, var(--christmas-light-5) 100%);
+  background-size: 50px 6px;
+  z-index: 1;
+  opacity: 0.8;
+  animation: christmas-lights 2s linear infinite;
+}
+
+@keyframes christmas-lights {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.site-header .logo-text,
+.site-header .nav-link,
+.theme-toggle-btn {
+  color: var(--christmas-white) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.site-header .logo-img {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.site-header .nav-item.active .nav-link {
+  color: var(--christmas-gold) !important;
+  position: relative;
+}
+
+.site-header .nav-item.active .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--christmas-gold);
+  box-shadow: 0 0 8px var(--christmas-gold);
+}
+
+/* Hiệu ứng tuyết rơi - tạo bởi JavaScript */
+.snowflake {
+  position: fixed;
+  top: -10%;
+  color: white;
+  font-size: 1.2em;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  user-select: none;
+  z-index: 1000;
+  cursor: default;
+  animation: fall linear forwards, sway 3s ease-in-out infinite alternate;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes sway {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--sway-amount, 30px));
+  }
+}
+
+/* Các trang trí Giáng sinh */
+.hero-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+                rgba(212, 36, 38, 0.5) 0%, 
+                rgba(212, 36, 38, 0.2) 25%, 
+                rgba(10, 95, 56, 0.2) 50%, 
+                rgba(212, 36, 38, 0.2) 75%, 
+                rgba(212, 36, 38, 0.5) 100%);
+  z-index: 1;
+}
+
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,5L57,35L87,35L63,55L70,85L50,70L30,85L37,55L13,35L43,35Z" fill="%23ffbd4a"/><circle cx="50" cy="50" r="10" fill="%23ffbd4a"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 10px rgba(255, 189, 74, 0.8));
+  animation: star-twinkle 3s ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.section-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.section-title::before {
+  content: '🎄';
+  position: absolute;
+  left: 0;
+  font-size: 1.5em;
+  filter: drop-shadow(0 0 5px rgba(10, 95, 56, 0.5));
+  animation: title-wobble 3s ease-in-out infinite;
+}
+
+@keyframes title-wobble {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.footer-title {
+  position: relative;
+  padding-left: 32px;
+}
+
+.footer-title::before {
+  content: '❄️';
+  position: absolute;
+  left: 0;
+  animation: snowflake-spin 8s linear infinite;
+}
+
+@keyframes snowflake-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Top ranking items */
+.ranking-list {
+  position: relative;
+}
+
+.ranking-list::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 40px);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10,1 L12,7 L19,7 L13,11 L15,17 L10,14 L5,17 L7,11 L1,7 L8,7 Z" fill="none" stroke="%23d4af37" stroke-width="0.5"/></svg>');
+  background-size: 40px 40px;
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.rank-number {
+  background: linear-gradient(135deg, var(--christmas-dark-red), var(--christmas-red));
+  color: white;
+  border: 2px solid var(--christmas-gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.rank-number::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0.3;
+}
+
+.ranking-item {
+  border-left: 3px solid var(--christmas-green);
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ranking-item:hover {
+  border-left-color: var(--christmas-red);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Movie cards and grid */
+.movie-card {
+  position: relative;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--christmas-red), var(--christmas-green));
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card:hover::before {
+  opacity: 1;
+}
+
+.movie-poster {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.movie-poster img {
+  transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-poster img {
+  transform: scale(1.1);
+}
+
+.movie-overlay {
+  background: linear-gradient(to top, 
+              rgba(10, 95, 56, 0.8) 0%, 
+              rgba(10, 95, 56, 0.4) 60%, 
+              transparent 100%);
+}
+
+/* Footer with Christmas styles */
+.site-footer {
+  background: linear-gradient(to bottom, var(--christmas-green), var(--christmas-dark-green));
+  color: var(--christmas-white);
+  border-top: 3px solid var(--christmas-gold);
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50,10 L53,20 L64,20 L55,26 L58,36 L50,30 L42,36 L45,26 L36,20 L47,20 Z" fill="none" stroke="%23ffffff" stroke-width="0.5"/><circle cx="20" cy="70" r="5" fill="none" stroke="%23ffffff" stroke-width="0.5"/><circle cx="80" cy="30" r="3" fill="none" stroke="%23ffffff" stroke-width="0.5"/></svg>');
+  background-size: 100px 100px;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.site-footer .footer-title,
+.site-footer a {
+  color: var(--christmas-white) !important;
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer a:hover {
+  color: var(--christmas-gold) !important;
+  text-shadow: 0 0 10px rgba(255, 189, 74, 0.5);
+}
+
+.footer-logo-img {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(to bottom, var(--christmas-red), var(--christmas-dark-red));
+  border-color: var(--christmas-dark-red);
+  box-shadow: 0 2px 10px rgba(212, 36, 38, 0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to bottom, #e83739, var(--christmas-red));
+  border-color: #a71d20;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 36, 38, 0.4);
+}
+
+.btn-outline-primary {
+  color: var(--christmas-red);
+  border-color: var(--christmas-red);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--christmas-red);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 36, 38, 0.3);
+}
+
+/* Section decorations */
+.movie-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-section::before,
+.movie-section::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.movie-section::before {
+  left: 10px;
+  top: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 120"><path d="M30,10 C20,25 10,35 10,50 C10,65 20,75 30,90 C40,75 50,65 50,50 C50,35 40,25 30,10 Z" fill="%230a5f38"/><rect x="20" y="40" width="20" height="20" fill="%23d42426"/><rect x="25" y="60" width="10" height="20" fill="%230a5f38"/></svg>');
+}
+
+.movie-section::after {
+  right: 10px;
+  top: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 120"><path d="M30,10 C20,25 10,35 10,50 C10,65 20,75 30,90 C40,75 50,65 50,50 C50,35 40,25 30,10 Z" fill="%230a5f38"/><rect x="20" y="40" width="20" height="20" fill="%23d42426"/><rect x="25" y="60" width="10" height="20" fill="%230a5f38"/></svg>');
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--christmas-red), var(--christmas-green));
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--christmas-dark-red), var(--christmas-dark-green));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .movie-section::before,
+  .movie-section::after {
+    opacity: 0.05;
+    width: 40px;
+    height: 80px;
+  }
+  
+  .hero-slide::after {
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .section-title {
+    padding-left: 35px;
+  }
+  
+  .section-title::before {
+    font-size: 1.2em;
+  }
+}
+
+/* Animation for shine effect */
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}

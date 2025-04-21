@@ -1,0 +1,190 @@
+/* Admin Style for Lọc Phim */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+    padding: .5rem 1rem;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    background: rgba(0, 123, 255, 0.25);
+}
+
+.sidebar .nav-link i {
+    margin-right: 8px;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+    top: .25rem;
+    right: 1rem;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+.dropdown-menu {
+    font-size: .875rem;
+}
+
+.dropdown-item {
+    padding: .5rem 1.5rem;
+}
+
+.dropdown-item i {
+    margin-right: .5rem;
+    width: 1rem;
+    text-align: center;
+}
+
+.footer {
+    margin-top: auto;
+    font-size: .875rem;
+}
+
+/* Dashboard Cards */
+.card {
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    padding: .75rem 1.5rem;
+}
+
+/* Table Styles */
+.table th {
+    font-weight: 600;
+    font-size: .875rem;
+}
+
+.table td {
+    font-size: .875rem;
+    vertical-align: middle;
+}
+
+/* Forms */
+.form-label {
+    font-weight: 500;
+}
+
+.input-group-text {
+    background-color: var(--bs-secondary-bg);
+}
+
+/* Badges and Status */
+.badge {
+    font-weight: 600;
+    padding: .35em .65em;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-active {
+    background-color: var(--bs-success);
+}
+
+.status-inactive {
+    background-color: var(--bs-danger);
+}
+
+.status-pending {
+    background-color: var(--bs-warning);
+}
+
+/* Charts and Graphs */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Fixes */
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: static;
+        padding-top: 1rem;
+        height: auto;
+    }
+    
+    .sidebar-sticky {
+        height: auto;
+    }
+    
+    .navbar-brand {
+        background: none;
+        box-shadow: none;
+    }
+}

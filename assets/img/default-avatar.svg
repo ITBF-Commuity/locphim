@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Default Avatar</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient">
+            <stop stop-color="#4A6FFF" offset="0%"></stop>
+            <stop stop-color="#9046FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle fill="url(#linearGradient)" cx="100" cy="100" r="100"></circle>
+        <path d="M100,140 C78.954305,140 62,123.045695 62,102 C62,80.954305 78.954305,64 100,64 C121.045695,64 138,80.954305 138,102 C138,123.045695 121.045695,140 100,140 Z" fill="#FFFFFF" opacity="0.25"></path>
+        <circle fill="#FFFFFF" opacity="0.25" cx="100" cy="56" r="22"></circle>
+        <path d="M155.5,172 C155.5,143.042778 130.957222,120 100,120 C69.042778,120 44.5,143.042778 44.5,172" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"></path>
+        <circle stroke="#FFFFFF" stroke-width="12" cx="100" cy="75" r="25"></circle>
+    </g>
+</svg>

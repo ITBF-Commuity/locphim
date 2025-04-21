@@ -1,0 +1,613 @@
+/**
+ * Lọc Phim - Tết Theme
+ * Giao diện theo mùa Tết Âm Lịch - Phiên bản nâng cấp
+ */
+
+:root {
+  --tet-red: #e50012;
+  --tet-dark-red: #b3000e;
+  --tet-gold: #f8b62d;
+  --tet-light-gold: #ffd34e;
+  --tet-yellow: #ffde29;
+  --tet-orange: #fe7c08;
+  --tet-green: #00843d;
+  --tet-dark-green: #006b32;
+  --tet-black: #222222;
+  --tet-white: #ffffff;
+  --tet-pink: #ff97c7;
+  --tet-light-pink: #ffc2db;
+}
+
+/**
+ * Áp dụng màu chủ đề vào biến chung của website
+ */
+[data-theme="light"], [data-theme="dark"] {
+  --primary-color: var(--tet-red);
+  --secondary-color: var(--tet-gold);
+  --accent-color: var(--tet-yellow);
+}
+
+/* Đặt hình nền hoa đào và phong nền chung cho toàn trang */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30,5 C25,10 20,10 15,15 C10,20 10,25 5,30 C10,35 10,40 15,45 C20,50 25,50 30,55 C35,50 40,50 45,45 C50,40 50,35 55,30 C50,25 50,20 45,15 C40,10 35,10 30,5 Z" fill="%23ff97c7" opacity="0.05"/></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="5" fill="%23ff97c7" opacity="0.05"/><path d="M40,20 C35,25 30,25 25,30 C20,35 20,40 15,45 C20,50 20,55 25,60 C30,65 35,65 40,70 C45,65 50,65 55,60 C60,55 60,50 65,45 C60,40 60,35 55,30 C50,25 45,25 40,20 Z" fill="none" stroke="%23ff97c7" stroke-width="0.5" opacity="0.07"/></svg>');
+  background-position: 0 0, 40px 40px;
+  background-size: 60px 60px, 80px 80px;
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Header styles */
+.site-header {
+  background: linear-gradient(to bottom, var(--tet-red), var(--tet-dark-red));
+  border-bottom: 3px solid var(--tet-gold);
+  position: relative;
+  box-shadow: 0 4px 15px rgba(229, 0, 18, 0.3);
+}
+
+.site-header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--tet-gold) 0%, 
+    var(--tet-light-gold) 25%, 
+    var(--tet-gold) 50%, 
+    var(--tet-light-gold) 75%, 
+    var(--tet-gold) 100%);
+  background-size: 200% 100%;
+  animation: tet-gold-shine 3s linear infinite;
+}
+
+@keyframes tet-gold-shine {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+.site-header .logo-text,
+.site-header .nav-link,
+.theme-toggle-btn {
+  color: var(--tet-white) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.site-header .logo-text:hover,
+.site-header .nav-link:hover {
+  color: var(--tet-gold) !important;
+  text-shadow: 0 0 10px rgba(248, 182, 45, 0.8);
+}
+
+.site-header .nav-item.active .nav-link {
+  color: var(--tet-gold) !important;
+  position: relative;
+}
+
+.site-header .nav-item.active .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--tet-gold);
+  box-shadow: 0 0 8px var(--tet-gold);
+}
+
+/* Hiệu ứng pháo hoa - tạo bởi JavaScript */
+.firecracker {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background-color: var(--tet-orange);
+  border-radius: 50%;
+  animation: explode 1.2s ease-out forwards;
+  z-index: 1000;
+  filter: blur(0.5px);
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 0 0 var(--tet-red), 0 0 0 0 var(--tet-gold), 0 0 0 0 var(--tet-yellow);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(35);
+    opacity: 0;
+    box-shadow: 0 0 40px 40px var(--tet-red), 0 0 20px 20px var(--tet-gold), 0 0 30px 30px var(--tet-yellow);
+  }
+}
+
+.firecracker-particle {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  animation: particle 1s ease-out forwards;
+  z-index: 1000;
+  filter: blur(0.5px);
+}
+
+@keyframes particle {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty));
+  }
+}
+
+/* Các trang trí Tết */
+.hero-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,5 C45,10 40,10 35,15 C30,20 25,25 20,30 C20,35 20,40 25,45 C30,50 35,55 40,60 C45,55 50,50 55,45 C60,40 65,35 65,30 C60,25 55,20 50,15 C45,10 35,10 30,5 Z" fill="%23f8b62d"/><circle cx="50" cy="30" r="8" fill="%23e50012"/><path d="M40,25 L60,35 M40,35 L60,25" stroke="%23ffffff" stroke-width="2"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(15deg);
+  z-index: 2;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 15px rgba(248, 182, 45, 0.8));
+  animation: tet-symbol-float 5s ease-in-out infinite;
+}
+
+@keyframes tet-symbol-float {
+  0%, 100% {
+    transform: translateY(0) rotate(15deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(10deg);
+  }
+}
+
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(229, 0, 18, 0.6) 0%, 
+    rgba(0, 0, 0, 0.3) 50%, 
+    rgba(229, 0, 18, 0.6) 100%);
+  z-index: 1;
+}
+
+.section-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.section-title::before {
+  content: '🧧';
+  position: absolute;
+  left: 0;
+  font-size: 1.5em;
+  filter: drop-shadow(0 0 5px rgba(229, 0, 18, 0.5));
+  animation: envelope-float 3s ease-in-out infinite;
+}
+
+@keyframes envelope-float {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.footer-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 35px;
+}
+
+.footer-title::before {
+  content: '✨';
+  position: absolute;
+  left: 0;
+  font-size: 1.3em;
+  animation: sparkle-spin 5s linear infinite;
+}
+
+@keyframes sparkle-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.7;
+  }
+}
+
+/* Top ranking items */
+.ranking-list {
+  position: relative;
+}
+
+.ranking-list::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 40px);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20,5 L23,15 L33,15 L25,21 L28,32 L20,25 L12,32 L15,21 L7,15 L17,15 Z" fill="none" stroke="%23f8b62d" stroke-width="0.5" opacity="0.3"/></svg>');
+  background-size: 40px 40px;
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.rank-number {
+  background: linear-gradient(135deg, var(--tet-dark-red), var(--tet-red));
+  color: white;
+  border: 2px solid var(--tet-gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.rank-number::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0.3;
+}
+
+.ranking-item {
+  border-left: 3px solid var(--tet-gold);
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ranking-item:hover {
+  border-left-width: 5px;
+  transform: translateX(3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Movie cards and grid */
+.movie-card {
+  position: relative;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--tet-red), var(--tet-gold), var(--tet-green));
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.movie-card:hover::before {
+  opacity: 1;
+}
+
+.movie-poster {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.movie-poster img {
+  transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-poster img {
+  transform: scale(1.1);
+}
+
+.movie-overlay {
+  background: linear-gradient(to top, 
+              rgba(229, 0, 18, 0.8) 0%, 
+              rgba(229, 0, 18, 0.4) 60%, 
+              transparent 100%);
+}
+
+/* Footer with Tet styles */
+.site-footer {
+  background: linear-gradient(to bottom, var(--tet-red), var(--tet-dark-red));
+  color: white;
+  border-top: 3px solid var(--tet-gold);
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50,10 C40,20 30,20 20,30 C10,40 10,50 10,60 C20,70 30,80 50,80 C70,80 80,70 90,60 C90,50 90,40 80,30 C70,20 60,20 50,10 Z" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></svg>');
+  background-size: 100px 100px;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.site-footer .footer-title,
+.site-footer a {
+  color: white !important;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.site-footer a {
+  display: inline-block;
+}
+
+.site-footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--tet-gold);
+  transition: width 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: var(--tet-gold) !important;
+  text-shadow: 0 0 10px rgba(248, 182, 45, 0.5);
+}
+
+.site-footer a:hover::after {
+  width: 100%;
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(to bottom, var(--tet-red), var(--tet-dark-red));
+  border-color: var(--tet-dark-red);
+  box-shadow: 0 4px 15px rgba(229, 0, 18, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to bottom, #ff0013, var(--tet-red));
+  border-color: var(--tet-dark-red);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(229, 0, 18, 0.4);
+}
+
+.btn-primary:hover::after {
+  left: 100%;
+}
+
+.btn-outline-primary {
+  color: var(--tet-red);
+  border: 2px solid var(--tet-red);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--tet-red);
+  border-color: var(--tet-red);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(229, 0, 18, 0.3);
+}
+
+/* Section decorations - Mai đào và cành quất */
+.movie-section {
+  position: relative;
+  overflow: hidden;
+  padding: 30px 0;
+  margin: 20px 0;
+}
+
+.movie-section::before,
+.movie-section::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  z-index: -1;
+  transform-origin: bottom center;
+  animation: branch-sway 8s ease-in-out infinite alternate;
+}
+
+@keyframes branch-sway {
+  0% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Cành hoa đào bên trái */
+.movie-section::before {
+  left: 10px;
+  top: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 120"><path d="M30,120 C30,120 20,90 40,70 C60,50 50,20 30,10" fill="none" stroke="%23800000" stroke-width="2"/><circle cx="25" cy="20" r="5" fill="%23ff97c7"/><circle cx="35" cy="30" r="6" fill="%23ff97c7"/><circle cx="30" cy="45" r="7" fill="%23ff97c7"/><circle cx="45" cy="60" r="6" fill="%23ff97c7"/><circle cx="25" cy="70" r="5" fill="%23ff97c7"/></svg>');
+}
+
+/* Cành quất bên phải */
+.movie-section::after {
+  right: 10px;
+  top: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 120"><path d="M30,120 C30,120 40,90 20,70 C0,50 10,20 30,10" fill="none" stroke="%23006b32" stroke-width="2"/><circle cx="30" cy="20" r="5" fill="%23f8b62d"/><circle cx="20" cy="35" r="4" fill="%23f8b62d"/><circle cx="35" cy="50" r="6" fill="%23f8b62d"/><circle cx="15" cy="65" r="5" fill="%23f8b62d"/><circle cx="30" cy="75" r="4" fill="%23f8b62d"/><path d="M27,17 L33,23 M27,23 L33,17" stroke="%23006b32" stroke-width="1"/><path d="M17,32 L23,38 M17,38 L23,32" stroke="%23006b32" stroke-width="1"/><path d="M32,47 L38,53 M32,53 L38,47" stroke="%23006b32" stroke-width="1"/><path d="M12,62 L18,68 M12,68 L18,62" stroke="%23006b32" stroke-width="1"/><path d="M27,72 L33,78 M27,78 L33,72" stroke="%23006b32" stroke-width="1"/></svg>');
+}
+
+/* Card styles */
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.card-header {
+  background: linear-gradient(to right, var(--tet-red), var(--tet-dark-red));
+  color: white;
+  border-bottom: 2px solid var(--tet-gold);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--tet-red), var(--tet-gold));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--tet-dark-red), var(--tet-gold));
+}
+
+/* Special Tet elements - Banner Lời chúc */
+.tet-banner {
+  background-color: rgba(248, 182, 45, 0.1);
+  border: 2px solid var(--tet-gold);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tet-banner::before,
+.tet-banner::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.tet-banner::before {
+  top: 10px;
+  left: 10px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M25,5 C20,10 10,10 5,15 C0,20 0,30 5,35 C10,40 20,40 25,45 C30,40 40,40 45,35 C50,30 50,20 45,15 C40,10 30,10 25,5 Z" fill="%23f8b62d"/><circle cx="25" cy="25" r="5" fill="%23e50012"/><path d="M20,20 L30,30 M20,30 L30,20" stroke="%23ffffff" stroke-width="1.5"/></svg>');
+  transform: rotate(-15deg);
+}
+
+.tet-banner::after {
+  bottom: 10px;
+  right: 10px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M25,5 C20,10 10,10 5,15 C0,20 0,30 5,35 C10,40 20,40 25,45 C30,40 40,40 45,35 C50,30 50,20 45,15 C40,10 30,10 25,5 Z" fill="%23f8b62d"/><circle cx="25" cy="25" r="5" fill="%23e50012"/><path d="M20,20 L30,30 M20,30 L30,20" stroke="%23ffffff" stroke-width="1.5"/></svg>');
+  transform: rotate(15deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .movie-section::before,
+  .movie-section::after {
+    opacity: 0.1;
+    width: 40px;
+    height: 80px;
+  }
+  
+  .hero-slide::after {
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .section-title {
+    padding-left: 35px;
+  }
+  
+  .section-title::before {
+    font-size: 1.2em;
+  }
+}

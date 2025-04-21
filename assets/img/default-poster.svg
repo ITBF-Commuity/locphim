@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="450" viewBox="0 0 300 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="450" fill="#1E1E1E"/>
+  
+  <!-- Gradient Overlay -->
+  <rect width="300" height="450" fill="url(#gradient)"/>
+  
+  <!-- Film Reel Icon -->
+  <g transform="translate(120, 155)">
+    <circle cx="30" cy="30" r="50" fill="#333333"/>
+    <circle cx="30" cy="30" r="45" fill="#1E1E1E"/>
+    
+    <!-- Film Holes -->
+    <circle cx="30" cy="-20" r="8" fill="#333333"/>
+    <circle cx="68" cy="11" r="8" fill="#333333"/>
+    <circle cx="53" cy="56" r="8" fill="#333333"/>
+    <circle cx="1" cy="56" r="8" fill="#333333"/>
+    <circle cx="-9" cy="11" r="8" fill="#333333"/>
+    
+    <!-- Play Icon -->
+    <path d="M45 30L20 45V15L45 30Z" fill="#E50914"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="150" y="280" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">No Poster Available</text>
+  <text x="150" y="310" font-family="Arial, sans-serif" font-size="16" fill="#AAAAAA" text-anchor="middle">Lọc Phim</text>
+  
+  <!-- Decorative Elements -->
+  <rect x="60" y="350" width="180" height="2" rx="1" fill="#333333"/>
+  <rect x="90" y="365" width="120" height="2" rx="1" fill="#333333"/>
+  <rect x="105" y="380" width="90" height="2" rx="1" fill="#333333"/>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="300" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2A2A2A"/>
+      <stop offset="1" stop-color="#0E0E0E"/>
+    </linearGradient>
+  </defs>
+</svg>

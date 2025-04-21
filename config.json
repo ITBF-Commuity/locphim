@@ -1,0 +1,43 @@
+{
+    "db_type": "sqlite",
+    "db_host": "",
+    "db_name": "",
+    "db_user": "",
+    "db_pass": "",
+    "db_port": "",
+    "db_file": ".\/loc_phim.db",
+    "site_url": "https:\/\/locphim.replit.app",
+    "admin_email": "admin@locphim.com",
+    "debug_mode": true,
+    "timezone": "Asia\/Ho_Chi_Minh",
+    "session_lifetime": 86400,
+    "default_theme": "dark",
+    "site": {
+        "title": "L\u1ecdc Phim",
+        "description": "Trang web xem phim v\u00e0 anime tr\u1ef1c tuy\u1ebfn",
+        "keywords": "phim, anime, xem phim, phim HD",
+        "admin_email": "admin@locphim.com",
+        "items_per_page": 24,
+        "default_language": "vi",
+        "default_theme": "dark",
+        "maintenance_mode": false,
+        "maintenance_message": "Trang web \u0111ang \u0111\u01b0\u1ee3c b\u1ea3o tr\u00ec. Vui l\u00f2ng quay l\u1ea1i sau!",
+        "seasonal_theme_enabled": true,
+        "active_seasonal_theme": "trung-thu"
+    },
+    "seo": {
+        "google_analytics": ""
+    },
+    "social": {
+        "facebook_page": "",
+        "twitter_username": ""
+    },
+    "auth": {
+        "allow_registration": true,
+        "email_verification": false,
+        "captcha_enabled": false
+    },
+    "comments": {
+        "auto_approve": false
+    }
+}

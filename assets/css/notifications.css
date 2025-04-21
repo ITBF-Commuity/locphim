@@ -1,0 +1,258 @@
+/**
+ * CSS cho thông báo
+ */
+
+/* Container thông báo */
+.notification-container {
+    position: relative;
+}
+
+/* Nút thông báo */
+.notification-btn {
+    position: relative;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--bs-body-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Badge số lượng thông báo */
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background-color: var(--bs-danger);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+/* Dropdown thông báo */
+.notification-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 320px;
+    max-width: 90vw;
+    max-height: 400px;
+    background-color: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    display: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Hiển thị dropdown khi active */
+.notification-dropdown.show {
+    display: block;
+}
+
+/* Header dropdown */
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--bs-border-color);
+    font-weight: 600;
+}
+
+.notification-header h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.notification-header a {
+    font-size: 0.8rem;
+    color: var(--bs-primary);
+    text-decoration: none;
+}
+
+/* Body dropdown */
+.notification-body {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+/* Danh sách thông báo */
+.notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Thông báo trống */
+.no-notification {
+    padding: 20px;
+    text-align: center;
+    color: var(--bs-secondary);
+    font-style: italic;
+}
+
+/* Loading */
+.notification-loading {
+    padding: 20px;
+    text-align: center;
+    color: var(--bs-secondary);
+}
+
+.notification-loading .loader {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--bs-border-color);
+    border-radius: 50%;
+    border-top-color: var(--bs-primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error */
+.notification-error {
+    padding: 15px;
+    color: var(--bs-danger);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Item thông báo */
+.notification-item {
+    display: flex;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--bs-border-color);
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.05);
+}
+
+/* Thông báo chưa đọc */
+.notification-item.unread {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+}
+
+.notification-item.unread:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.15);
+}
+
+/* Icon thông báo */
+.notification-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+/* Nội dung thông báo */
+.notification-content {
+    flex-grow: 1;
+    padding-right: 24px;
+}
+
+/* Tiêu đề thông báo */
+.notification-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+/* Nội dung thông báo */
+.notification-message {
+    font-size: 0.85rem;
+    color: var(--bs-secondary);
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+/* Thời gian thông báo */
+.notification-time {
+    font-size: 0.75rem;
+    color: var(--bs-secondary);
+}
+
+/* Nút đánh dấu đã đọc */
+.mark-read-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.notification-item:hover .mark-read-btn {
+    opacity: 1;
+}
+
+/* Footer dropdown */
+.notification-footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-top: 1px solid var(--bs-border-color);
+}
+
+.notification-footer a {
+    color: var(--bs-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Dark mode */
+[data-theme="dark"] .notification-dropdown {
+    background-color: #2c2c3a;
+    border-color: #45455a;
+}
+
+[data-theme="dark"] .notification-header,
+[data-theme="dark"] .notification-item,
+[data-theme="dark"] .notification-footer {
+    border-color: #45455a;
+}
+
+[data-theme="dark"] .notification-icon {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .mark-read-btn {
+    background-color: #2c2c3a;
+}

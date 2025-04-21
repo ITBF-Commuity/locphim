@@ -1,0 +1,284 @@
+/**
+ * Lọc Phim - Dark Theme CSS
+ * Stylesheet cho chế độ tối của trang web Lọc Phim
+ */
+
+[data-theme="dark"] {
+    /* Text colors */
+    --text-color: #e1e1e1;
+    --text-muted: #a0a0a0;
+    
+    /* Background colors */
+    --bg-color: #121212;
+    --bg-dark: #1a1a1a;
+    --bg-light: #1e1e1e;
+    --bg-card: #2a2a2a;
+    --bg-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+    
+    /* Border colors */
+    --border-color: #3a3a3a;
+    --border-hover: #4a4a4a;
+    
+    /* Box shadow */
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .site-header {
+    background-color: var(--bg-dark);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .logo {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .nav-link {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .nav-link:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background-color: var(--bg-dark);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .dropdown-menu a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+    background-color: var(--bg-color);
+}
+
+[data-theme="dark"] .avatar-placeholder {
+    background-color: var(--primary-color);
+}
+
+[data-theme="dark"] .mobile-menu {
+    background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .mobile-nav a {
+    color: var(--text-color);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .mobile-categories a {
+    background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .movie-card {
+    background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .movie-title a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .movie-meta {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .form-control {
+    background-color: var(--bg-dark);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .form-control:focus {
+    border-color: var(--secondary-color);
+    background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .btn-outline-primary {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .btn-outline-light {
+    color: var(--text-light);
+    border-color: var(--text-light);
+}
+
+[data-theme="dark"] .top-item {
+    background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .top-title {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .top-meta {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .modal-content {
+    background-color: var(--bg-dark);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .modal-header {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .modal-footer {
+    border-top-color: var(--border-color);
+}
+
+[data-theme="dark"] .card {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .card-header {
+    background-color: var(--bg-dark);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .list-group-item {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .pagination .page-link {
+    background-color: var(--bg-dark);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .pagination .page-link:hover {
+    background-color: var(--bg-light);
+    border-color: var(--border-hover);
+}
+
+[data-theme="dark"] .pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .table {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .table th,
+[data-theme="dark"] .table td {
+    border-top-color: var(--border-color);
+}
+
+[data-theme="dark"] .table thead th {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Player styles in dark mode */
+[data-theme="dark"] .player-container {
+    background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .player-controls {
+    background-color: rgba(26, 26, 26, 0.9);
+}
+
+[data-theme="dark"] .player-settings-menu {
+    background-color: var(--bg-dark);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .player-settings-item {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .player-settings-item:hover {
+    background-color: var(--bg-light);
+}
+
+/* Auth forms in dark mode */
+[data-theme="dark"] .auth-container {
+    background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .auth-header {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .auth-form input {
+    background-color: var(--bg-dark);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .auth-form input:focus {
+    border-color: var(--secondary-color);
+}
+
+/* User profile in dark mode */
+[data-theme="dark"] .profile-header {
+    background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .profile-stats {
+    background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .profile-tabs .nav-link {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .profile-tabs .nav-link.active {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Admin panel in dark mode */
+[data-theme="dark"] .admin-sidebar {
+    background-color: var(--bg-dark);
+    border-right-color: var(--border-color);
+}
+
+[data-theme="dark"] .admin-content {
+    background-color: var(--bg-color);
+}
+
+[data-theme="dark"] .admin-card {
+    background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .admin-table {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .admin-table th,
+[data-theme="dark"] .admin-table td {
+    border-color: var(--border-color);
+}
+
+/* Toast notifications in dark mode */
+[data-theme="dark"] .toast {
+    background-color: var(--bg-dark);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .toast-header {
+    background-color: var(--bg-card);
+    color: var(--text-color);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .toast-body {
+    color: var(--text-color);
+}

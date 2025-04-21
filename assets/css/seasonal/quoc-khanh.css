@@ -1,0 +1,876 @@
+/**
+ * Lọc Phim - Quốc Khánh (2/9) Theme
+ * Giao diện hiện đại, tươi sáng và sinh động cho ngày Quốc Khánh Việt Nam
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Bảng màu chính */
+  --qk-red: #e30a17;
+  --qk-bright-red: #ff0a16;
+  --qk-dark-red: #b30a14;
+  --qk-yellow: #fcdf00;
+  --qk-bright-yellow: #ffea00;
+  --qk-dark-yellow: #e6cb00;
+  --qk-blue: #0033a0;
+  --qk-bright-blue: #0045d6;
+  --qk-dark-blue: #00257a;
+  --qk-white: #ffffff;
+  --qk-black: #000000;
+  --qk-gold: #f9b938;
+  --qk-bright-gold: #ffd161;
+  --qk-dark-gold: #ec9a00;
+  
+  /* Gradient màu */
+  --gradient-flag: linear-gradient(135deg, var(--qk-red) 0%, var(--qk-bright-red) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--qk-gold) 0%, var(--qk-bright-gold) 100%);
+  --gradient-blue: linear-gradient(135deg, var(--qk-blue) 0%, var(--qk-bright-blue) 100%);
+  
+  /* Hiệu ứng và bóng */
+  --glow-red: 0 0 20px rgba(227, 10, 23, 0.7);
+  --glow-yellow: 0 0 20px rgba(252, 223, 0, 0.7);
+  --glow-blue: 0 0 20px rgba(0, 51, 160, 0.7);
+  --shadow-1: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --shadow-2: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.1);
+  
+  /* Animations */
+  --timing-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --timing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/**
+ * Áp dụng màu chủ đề vào biến chung của website
+ */
+[data-theme="light"], [data-theme="dark"] {
+  --primary-color: var(--qk-red);
+  --secondary-color: var(--qk-blue);
+  --accent-color: var(--qk-yellow);
+}
+
+/* Set font cho toàn bộ website */
+.national-day body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8f9fa;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(227, 10, 23, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(0, 51, 160, 0.03) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Pattern nền trang */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30,10 L34,24 L49,24 L37,33 L41,47 L30,38 L19,47 L23,33 L11,24 L26,24 Z" fill="none" stroke="%23fcdf00" stroke-width="0.5" opacity="0.2"/></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="%23e30a17" opacity="0.1"/></svg>');
+  background-position: 0 0, 30px 30px;
+  background-size: 60px 60px, 24px 24px;
+  z-index: -1;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Header hiện đại mang màu cờ đỏ sao vàng */
+.site-header {
+  background: var(--gradient-flag);
+  border: none;
+  position: relative;
+  box-shadow: 0 5px 25px rgba(227, 10, 23, 0.4);
+  margin-bottom: 20px;
+}
+
+/* Hiệu ứng cho header */
+.site-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--qk-yellow);
+  box-shadow: 0 0 15px var(--qk-yellow);
+}
+
+/* Phần tử header nổi bật */
+.site-header .logo-text,
+.site-header .nav-link,
+.theme-toggle-btn {
+  color: var(--qk-white) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s var(--timing-bounce);
+}
+
+.site-header .logo-text:hover,
+.site-header .nav-link:hover {
+  color: var(--qk-yellow) !important;
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(252, 223, 0, 0.8);
+}
+
+.site-header .nav-item.active .nav-link {
+  color: var(--qk-yellow) !important;
+  position: relative;
+}
+
+.site-header .nav-item.active .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--qk-yellow);
+  box-shadow: 0 0 10px var(--qk-yellow);
+}
+
+/* Lá cờ tung bay */
+.national-day-flag {
+  position: fixed;
+  top: 80px;
+  right: 30px;
+  width: 90px;
+  height: 60px;
+  background-color: var(--qk-red);
+  box-shadow: var(--shadow-1);
+  z-index: 1000;
+  overflow: hidden;
+  transform-origin: right center;
+  animation: flag-wave 6s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+.national-day-flag::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M15,3 L18,12 L27,12 L20,18 L23,27 L15,21 L7,27 L10,18 L3,12 L12,12 Z" fill="%23fcdf00"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@keyframes flag-wave {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Highlight hero section */
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 140px;
+  height: 140px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140"><circle cx="70" cy="70" r="70" fill="%23e30a17"/><path d="M70,25 L82,60 L120,60 L90,85 L100,120 L70,95 L40,120 L50,85 L20,60 L58,60 Z" fill="%23fcdf00"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  filter: drop-shadow(0 0 20px rgba(227, 10, 23, 0.6));
+  animation: emblem-float 8s ease-in-out infinite;
+}
+
+@keyframes emblem-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 0 20px rgba(227, 10, 23, 0.6));
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+    filter: drop-shadow(0 0 30px rgba(227, 10, 23, 0.8));
+  }
+}
+
+/* Overlay hero với màu quốc khánh */
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+              rgba(227, 10, 23, 0.6) 0%, 
+              rgba(227, 10, 23, 0.3) 50%, 
+              rgba(0, 51, 160, 0.6) 100%);
+  z-index: 1;
+}
+
+/* Tiêu đề phần nổi bật */
+.section-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 45px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--qk-red);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 rgba(227, 10, 23, 0.1);
+}
+
+.section-title::before {
+  content: '🇻🇳';
+  position: absolute;
+  left: 0;
+  font-size: 1.6em;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+  animation: flag-pulse 3s ease-in-out infinite;
+}
+
+@keyframes flag-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.footer-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 38px;
+  font-weight: 700;
+  color: var(--qk-white);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-title::before {
+  content: '⭐';
+  position: absolute;
+  left: 0;
+  font-size: 1.5em;
+  filter: drop-shadow(0 0 10px rgba(252, 223, 0, 0.7));
+  animation: star-spin 6s linear infinite;
+}
+
+@keyframes star-spin {
+  0% {
+    transform: rotate(0deg);
+    filter: drop-shadow(0 0 10px rgba(252, 223, 0, 0.7));
+  }
+  50% {
+    transform: rotate(180deg);
+    filter: drop-shadow(0 0 15px rgba(252, 223, 0, 0.9));
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: drop-shadow(0 0 10px rgba(252, 223, 0, 0.7));
+  }
+}
+
+/* Footer với thiết kế hiện đại */
+.site-footer {
+  background: var(--gradient-blue);
+  color: var(--qk-white);
+  border: none;
+  position: relative;
+  padding-top: 4rem;
+  margin-top: 6rem;
+  box-shadow: 0 -10px 25px rgba(0, 51, 160, 0.3);
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0,30 L0,18 C20,30 40,5 60,18 C80,30 90,10 100,18 L100,30 Z" fill="%230033a0"/></svg>');
+  background-size: 100% 100%;
+}
+
+.site-footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100" opacity="0.1"><path d="M50,20 L60,45 L90,45 L65,60 L75,85 L50,70 L25,85 L35,60 L10,45 L40,45 Z" fill="%23ffffff"/></svg>');
+  background-size: 200px 100px;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.site-footer a {
+  color: var(--qk-yellow) !important;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.site-footer a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background: var(--qk-yellow);
+  transition: width 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: var(--qk-bright-yellow) !important;
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(252, 223, 0, 0.5);
+}
+
+.site-footer a:hover::after {
+  width: 100%;
+}
+
+/* Card phim với hiệu ứng 3D */
+.movie-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-1) !important;
+  transition: all 0.5s var(--timing-bounce) !important;
+  border: none !important;
+  background: var(--qk-white);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  position: relative;
+}
+
+.movie-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    var(--qk-red), 
+    var(--qk-yellow), 
+    var(--qk-blue), 
+    var(--qk-red));
+  z-index: -1;
+  border-radius: 18px;
+  background-size: 400% 400%;
+  animation: gradient-shift 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.movie-card:hover {
+  transform: translateY(-15px) rotateX(5deg) rotateY(-5deg) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+.movie-card:hover::before {
+  opacity: 1;
+}
+
+.movie-poster {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+.movie-poster::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    rgba(227, 10, 23, 0.1), 
+    rgba(0, 51, 160, 0.3));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.movie-card:hover .movie-poster::after {
+  opacity: 1;
+}
+
+.movie-poster img {
+  transition: transform 0.7s ease;
+}
+
+.movie-card:hover .movie-poster img {
+  transform: scale(1.15);
+}
+
+.movie-card .card-body {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem !important;
+  transition: all 0.3s ease;
+  background: var(--qk-white);
+  border-radius: 0 0 16px 16px;
+}
+
+.movie-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  color: var(--qk-black);
+  transition: all 0.3s ease;
+}
+
+.movie-title a {
+  color: var(--qk-black);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.movie-title a:hover {
+  color: var(--qk-red);
+}
+
+/* Button hiện đại phong cách quốc khánh */
+.btn-primary {
+  background: var(--gradient-flag);
+  border: none;
+  border-radius: 50px !important;
+  padding: 12px 30px !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 25px rgba(227, 10, 23, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  z-index: 1;
+  text-transform: uppercase;
+  color: var(--qk-white) !important;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(90deg, 
+              transparent, 
+              rgba(255, 255, 255, 0.3), 
+              transparent);
+  transform: rotate(25deg);
+  transition: left 0.8s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(227, 10, 23, 0.4);
+  background: var(--qk-bright-red);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-outline-primary {
+  color: var(--qk-red);
+  border: 2px solid var(--qk-red);
+  border-radius: 50px !important;
+  padding: 10px 28px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: transparent;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-outline-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-flag);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.btn-outline-primary:hover {
+  color: var(--qk-white) !important;
+  border-color: transparent;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(227, 10, 23, 0.3);
+}
+
+.btn-outline-primary:hover::before {
+  opacity: 1;
+}
+
+/* Trang trí sections bằng màu sắc lá cờ */
+.movie-section {
+  position: relative;
+  padding: 60px 0;
+  margin: 60px 0;
+  overflow: visible;
+}
+
+.movie-section::before,
+.movie-section::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.movie-section::before {
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, var(--qk-red) 0%, transparent 70%);
+}
+
+.movie-section::after {
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, var(--qk-blue) 0%, transparent 70%);
+}
+
+/* Ranking list hiện đại */
+.ranking-list {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  background: var(--qk-white);
+  padding: 20px;
+}
+
+.rank-number {
+  background: var(--gradient-gold);
+  color: var(--qk-black);
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 5px 15px rgba(249, 185, 56, 0.3);
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rank-number::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0.5;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.ranking-item {
+  border-left: 4px solid var(--qk-red);
+  border-radius: 12px;
+  transition: all 0.4s var(--timing-bounce);
+  margin-bottom: 15px;
+  background: #f8f9fa;
+  padding: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ranking-item:hover {
+  transform: translateX(10px) translateY(-5px);
+  border-left: 4px solid var(--qk-bright-red);
+  box-shadow: var(--shadow-soft);
+  background: var(--qk-white);
+}
+
+/* Scrollbar custom */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--qk-red), var(--qk-blue));
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--qk-bright-red), var(--qk-bright-blue));
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* Hiệu ứng pháo hoa cho quốc khánh */
+.firework {
+  position: fixed;
+  z-index: 1000;
+  opacity: 0;
+  animation: firework-explode 1s ease-out forwards;
+}
+
+@keyframes firework-explode {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Responsive adaptations */
+@media (max-width: 768px) {
+  .hero-slide::after {
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .section-title {
+    padding-left: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .movie-section {
+    padding: 40px 0;
+    margin: 40px 0;
+  }
+  
+  .movie-section::before,
+  .movie-section::after {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .national-day-flag {
+    width: 60px;
+    height: 40px;
+    top: 70px;
+    right: 15px;
+  }
+}
+
+/* Hiệu ứng modal hiện đại */
+.modal-content {
+  border-radius: 16px;
+  border: none;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+}
+
+.modal-header {
+  background: var(--gradient-flag);
+  color: var(--qk-white);
+  border-bottom: none;
+  padding: 20px 30px;
+}
+
+.modal-title {
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 20px 30px;
+}
+
+/* Toast notifications */
+.toast {
+  background: var(--qk-white);
+  border-radius: 16px;
+  border: none;
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+  border-left: 5px solid var(--qk-red);
+}
+
+.toast-header {
+  background: transparent;
+  border-bottom: none;
+  color: var(--qk-red);
+  font-weight: 700;
+  padding: 15px 20px 5px;
+}
+
+.toast-body {
+  color: var(--qk-black);
+  padding: 5px 20px 15px;
+}
+
+/* Badge */
+.badge {
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background: var(--qk-red);
+  color: var(--qk-white);
+}
+
+.badge-secondary {
+  background: var(--qk-blue);
+  color: var(--qk-white);
+}
+
+.badge-warning {
+  background: var(--qk-yellow);
+  color: var(--qk-black);
+}
+
+/* Ruy băng cho các card đặc biệt */
+.ribbon-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ribbon-card::before {
+  content: 'QUỐC KHÁNH';
+  position: absolute;
+  top: 25px;
+  right: -50px;
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: var(--qk-red);
+  color: var(--qk-white);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(227, 10, 23, 0.3);
+  transform: rotate(45deg);
+  z-index: 10;
+}
+
+/* Thêm biên hỗn hợp cho các section nổi bật */
+.featured-section {
+  position: relative;
+  border-radius: 16px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(227, 10, 23, 0.05), rgba(0, 51, 160, 0.05));
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 40px;
+}
+
+.featured-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--qk-red), var(--qk-blue));
+}
+
+.featured-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path d="M100,40 L115,85 L165,85 L125,115 L140,160 L100,130 L60,160 L75,115 L35,85 L85,85 Z" fill="%23e30a17" opacity="0.03"/></svg>');
+  background-size: 200px 200px;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Hiệu ứng đặc biệt animation chuyển trang */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--qk-red);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
