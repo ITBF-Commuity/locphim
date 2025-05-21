@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f0f;stop-opacity:1" />
+    </linearGradient>
+    <filter id="noise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="0.1" intercept="0"/>
+        <feFuncG type="linear" slope="0.1" intercept="0"/>
+        <feFuncB type="linear" slope="0.1" intercept="0"/>
+        <feFuncA type="linear" slope="0.1" intercept="0"/>
+      </feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  
+  <!-- Base Background -->
+  <rect width="100%" height="100%" fill="url(#grad1)"/>
+  
+  <!-- Noise Overlay -->
+  <rect width="100%" height="100%" fill="url(#grad1)" filter="url(#noise)" opacity="0.4"/>
+  
+  <!-- Red Highlights -->
+  <circle cx="200" cy="200" r="400" fill="#e50914" opacity="0.1"/>
+  <circle cx="1720" cy="900" r="300" fill="#e50914" opacity="0.07"/>
+  
+  <!-- Decorative Elements -->
+  <g opacity="0.05">
+    <?php for($i=0; $i<20; $i++) { ?>
+    <rect x="<?php echo rand(0, 1920); ?>" y="<?php echo rand(0, 1080); ?>" width="<?php echo rand(50, 200); ?>" height="<?php echo rand(80, 300); ?>" rx="5" ry="5" fill="#ffffff"/>
+    <?php } ?>
+  </g>
+</svg>

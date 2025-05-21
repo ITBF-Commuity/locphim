@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d9230f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a91b0c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  
+  <!-- VIP Card -->
+  <rect x="50" y="50" width="300" height="180" rx="15" fill="url(#grad1)" filter="url(#shadow)" />
+  
+  <!-- Gold Trim -->
+  <rect x="55" y="55" width="290" height="170" rx="12" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="2" />
+  
+  <!-- VIP Text -->
+  <text x="200" y="100" font-family="Arial, sans-serif" font-weight="bold" font-size="40" text-anchor="middle" fill="#FFD700">VIP MEMBERSHIP</text>
+  
+  <!-- Crown Icon -->
+  <path d="M170,130 L180,110 L200,130 L220,110 L230,130 L220,145 L180,145 L170,130 Z" fill="#FFD700" />
+  <circle cx="180" cy="115" r="3" fill="#FFD700" />
+  <circle cx="200" cy="110" r="3" fill="#FFD700" />
+  <circle cx="220" cy="115" r="3" fill="#FFD700" />
+  
+  <!-- Benefits -->
+  <text x="200" y="165" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">PREMIUM CONTENT • NO ADS • HD QUALITY • DOWNLOADS</text>
+  
+  <!-- Stars -->
+  <g opacity="0.8">
+    <path d="M40,40 L45,45 L40,50 L35,45 Z" fill="white" />
+    <path d="M350,30 L358,38 L350,46 L342,38 Z" fill="white" />
+    <path d="M70,210 L75,215 L70,220 L65,215 Z" fill="white" />
+    <path d="M320,200 L328,208 L320,216 L312,208 Z" fill="white" />
+    <path d="M200,30 L205,35 L200,40 L195,35 Z" fill="white" />
+  </g>
+  
+  <!-- Sparkles -->
+  <g>
+    <circle cx="30" cy="100" r="2" fill="white" opacity="0.6" />
+    <circle cx="370" cy="150" r="2" fill="white" opacity="0.6" />
+    <circle cx="300" cy="40" r="2" fill="white" opacity="0.6" />
+    <circle cx="100" cy="210" r="2" fill="white" opacity="0.6" />
+    <circle cx="250" cy="220" r="2" fill="white" opacity="0.6" />
+  </g>
+  
+  <!-- Cine Strip Bottom -->
+  <g opacity="0.2">
+    <rect x="60" y="185" width="20" height="10" rx="2" fill="white" />
+    <rect x="90" y="185" width="20" height="10" rx="2" fill="white" />
+    <rect x="120" y="185" width="20" height="10" rx="2" fill="white" />
+    <rect x="150" y="185" width="20" height="10" rx="2" fill="white" />
+    <rect x="180" y="185" width="20" height="10" rx="2" fill="white" />
+    <rect x="210" y="185" width="20" height="10" rx="2" fill="white" />
+    <rect x="240" y="185" width="20" height="10" rx="2" fill="white" />
+    <rect x="270" y="185" width="20" height="10" rx="2" fill="white" />
+    <rect x="300" y="185" width="20" height="10" rx="2" fill="white" />
+  </g>
+  
+  <!-- Premium Badge -->
+  <circle cx="320" cy="80" r="20" fill="#FFD700" />
+  <text x="320" y="85" font-family="Arial, sans-serif" font-weight="bold" font-size="14" text-anchor="middle" fill="#d9230f">PREMIUM</text>
+</svg>

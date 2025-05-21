@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200" height="500" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="500" fill="#1a1a1a"/>
+  <rect x="0" y="0" width="1200" height="500" fill="url(#gradient)"/>
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e50914" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <path d="M600,180 C660,180 710,200 750,240 C790,280 810,330 810,390 C810,450 790,500 750,540 C710,580 660,600 600,600 C540,600 490,580 450,540 C410,500 390,450 390,390 C390,330 410,280 450,240 C490,200 540,180 600,180 Z" fill="#e50914" opacity="0.2"/>
+    <path d="M600,200 C650,200 695,220 735,260 C775,300 795,345 795,395 C795,445 775,490 735,530 C695,570 650,590 600,590 C550,590 505,570 465,530 C425,490 405,445 405,395 C405,345 425,300 465,260 C505,220 550,200 600,200 Z" fill="#e50914" opacity="0.3"/>
+  </g>
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" text-anchor="middle">LỌC PHIM</text>
+  <text x="600" y="260" font-family="Arial, sans-serif" font-size="30" fill="white" text-anchor="middle">Trải nghiệm xem phim tuyệt vời</text>
+  <g transform="translate(520, 300)">
+    <rect x="0" y="0" width="160" height="80" rx="5" fill="#e50914"/>
+    <text x="80" y="47" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">XEM NGAY</text>
+  </g>
+  <!-- Film Strip Design -->
+  <g>
+    <rect x="50" y="400" width="1100" height="50" fill="black" opacity="0.5"/>
+    <rect x="50" y="400" width="1100" height="5" fill="white" opacity="0.2"/>
+    <rect x="50" y="445" width="1100" height="5" fill="white" opacity="0.2"/>
+    
+    <!-- Film Holes -->
+    <?xml-stylesheet type="text/css" href="#css"?>
+    <style id="css">
+      @keyframes slideRight {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(40px); }
+      }
+      .film-holes {
+        animation: slideRight 2s linear infinite;
+      }
+    </style>
+    <g class="film-holes">
+      <circle cx="80" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="120" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="160" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="200" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="240" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="280" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="320" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="360" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="400" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="440" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="480" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="520" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="560" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="600" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="640" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="680" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="720" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="760" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="800" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="840" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="880" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="920" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="960" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="1000" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="1040" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="1080" cy="410" r="8" fill="white" opacity="0.4"/>
+      <circle cx="1120" cy="410" r="8" fill="white" opacity="0.4"/>
+
+      <circle cx="80" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="120" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="160" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="200" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="240" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="280" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="320" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="360" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="400" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="440" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="480" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="520" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="560" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="600" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="640" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="680" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="720" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="760" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="800" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="840" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="880" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="920" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="960" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="1000" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="1040" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="1080" cy="440" r="8" fill="white" opacity="0.4"/>
+      <circle cx="1120" cy="440" r="8" fill="white" opacity="0.4"/>
+    </g>
+  </g>
+</svg>

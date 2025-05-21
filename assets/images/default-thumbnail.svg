@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="640" height="360" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#2A2A2A"/>
+  
+  <text x="320" y="120" font-family="Arial" font-size="30" text-anchor="middle" fill="#FFFFFF">Lọc Phim</text>
+  <text x="320" y="160" font-family="Arial" font-size="16" text-anchor="middle" fill="#FFFFFF">Hình ảnh tập phim đang được cập nhật</text>
+  
+  <rect x="245" y="180" width="150" height="100" rx="5" ry="5" fill="none" stroke="#E50914" stroke-width="3"/>
+  <path d="M320 190 L320 270 M255 230 L385 230" stroke="#E50914" stroke-width="3"/>
+  
+  <text x="320" y="320" font-family="Arial" font-size="12" text-anchor="middle" fill="#BEBEBE">© Lọc Phim - 2025</text>
+</svg>
